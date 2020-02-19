@@ -16,12 +16,18 @@ while(i<4):
                 if(continue1=='y'):
                     continue
                 if(continue1=='n'):
-                    end1=input("Thanks, have a nice day")       
+                    end1=input("Thanks, have a nice day")
+                    break
             if(choose=='2'):
                 withdraw=int(input("Enter withdrawal amount "))
                 if (withdraw>balance):
                     print("Insufficient Funds")
-                    break
+                    continue1=input("Do you wish to continue (y/n)? ")
+                    if(continue1=='y'):
+                        continue
+                    if(continue1=='n'):
+                        end1=input("Thanks, have a nice day")
+                        break
                 if(withdraw<=balance):
                     balance=balance-withdraw
                     print("Available Balance: ",balance)
@@ -30,6 +36,8 @@ while(i<4):
                         continue
                     if(continue1=='n'):
                         end1=input("Thanks, have a nice day")
+                        break
+        break
     else:
         print("Incorrect Password, try again")
         username=input("Enter Username: ")
